@@ -2,10 +2,15 @@ function init1() {
     canvas = document.getElementById("canvas");
     ctx = canvas.getContext("2d");
 
+
+    console.log($(window).width());
+    ht = $(window).height();
+    wd = $(window).width();
+    sw = wd/720;
+    sh = ht/1280;
+    ctx.scale(sw,sh);
     canvasWidth = 300;
     canvasHeight = 400;
-
-
     document.addEventListener('touchstart', handleTouchEvent, true);
     document.addEventListener('touchmove', handleTouchEvent, true);
     //player.push()
