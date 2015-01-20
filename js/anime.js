@@ -171,6 +171,18 @@ function enemyAnimate() {
             console.log("Collision");
             game = false;
         }
+        
+        if (P3Anim == true && wipeout.length > 0){
+    		if (b+30 > wipeout[0].y-5){ 
+    			
+    			for(var i=0; i<enemies.length; i++) {
+    			if (enemies[i].x == a && enemies[i].y == b ){
+    				enemies.splice(enemies.indexOf(enemies[i]), 1);
+    					}
+    				}
+    		};
+    		}
+        
         if (b > 400)
             ctx.clearRect(a, b, 30, 30);
     };
@@ -212,7 +224,7 @@ function levelCheck() {
 }
 
 function startWipeout() {
-
+	console.log("wipout called");
     if (wipeout.length < 1) {} else {
 
         var wipeoutLength = wipeout.length;
